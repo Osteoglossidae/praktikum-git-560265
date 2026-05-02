@@ -1,6 +1,6 @@
 /* ===================================================
-   style.css — branch: feature/navbar
-   Pesan commit: feat: add responsive navigation bar
+   style.css — branch: feature/footer
+   Pesan commit: feat: add footer with contact information
    =================================================== */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +25,6 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -1
 h2 { font-size: 2rem; font-weight: 700; }
 h3 { font-size: 1.2rem; font-weight: 700; }
 p  { color: var(--muted); }
-
 .accent { color: var(--accent); }
 
 .section { padding: 5rem 2rem; max-width: var(--max-width); margin: 0 auto; }
@@ -38,94 +37,14 @@ p  { color: var(--muted); }
 .btn-outline       { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ===== NAVBAR — DITAMBAHKAN DI BRANCH INI ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(13, 13, 13, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-
+.navbar { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
 
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-/* Responsive navbar */
-@media (max-width: 600px) {
-  .nav-links  { display: none; }
-  .nav-toggle { display: block; }
-
-  .navbar.open .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
-    gap: 1rem;
-  }
-}
-/* ========================================= */
-
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
+.hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
 .hero-content { position: relative; max-width: 700px; }
 .hero-badge { display: inline-block; background: rgba(0,229,160,0.1); color: var(--accent); border: 1px solid rgba(0,229,160,0.3); border-radius: 999px; padding: 0.3rem 1rem; font-size: 0.85rem; margin-bottom: 1.5rem; }
 .hero h1  { margin-bottom: 1.5rem; line-height: 1.1; }
@@ -152,5 +71,64 @@ p  { color: var(--muted); }
 .contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
 .contact-link:hover { border-color: var(--accent); color: var(--accent); }
 
-footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
-footer p { font-size: 0.85rem; color: var(--muted); }
+/* ===== FOOTER — DITAMBAHKAN DI BRANCH INI ===== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent) !important;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info p,
+.footer-contact p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.footer-contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+/* ========================================= */
+
+@media (max-width: 600px) {
+  .section       { padding: 3rem 1.25rem; }
+  .nav-links     { display: none; }
+  .footer-inner  { flex-direction: column; }
+  .footer-contact { text-align: left; }
+}
