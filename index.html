@@ -8,12 +8,17 @@
 </head>
 <body>
 
-  <header>
-    <h1 class="sr-only">Portofolio Saya</h1>
-  </header>
+  <nav class="navbar">
+    <a href="#" class="nav-logo">devPortfolio</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="this.closest('nav').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+  </nav>
 
   <main>
-
     <section id="hero" class="hero">
       <div class="hero-content">
         <span class="hero-badge">👋 Halo, selamat datang!</span>
@@ -30,26 +35,10 @@
       <h2 class="section-title">Skills</h2>
       <p class="section-subtitle">Teknologi yang saya gunakan sehari-hari</p>
       <div class="skills-grid">
-        <div class="skill-card card">
-          <div class="skill-icon">🌐</div>
-          <div class="skill-name">HTML &amp; CSS</div>
-          <div class="skill-desc">Membuat tampilan web yang responsif dan modern</div>
-        </div>
-        <div class="skill-card card">
-          <div class="skill-icon">⚡</div>
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-desc">Interaktivitas dan logika di sisi klien</div>
-        </div>
-        <div class="skill-card card">
-          <div class="skill-icon">📦</div>
-          <div class="skill-name">Git &amp; GitHub</div>
-          <div class="skill-desc">Version control, branching, dan kolaborasi</div>
-        </div>
-        <div class="skill-card card">
-          <div class="skill-icon">🚀</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-desc">Scripting, data, dan back-end sederhana</div>
-        </div>
+        <div class="skill-card card"><div class="skill-icon">🌐</div><div class="skill-name">HTML &amp; CSS</div><div class="skill-desc">Tampilan web responsif</div></div>
+        <div class="skill-card card"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div><div class="skill-desc">Interaktivitas sisi klien</div></div>
+        <div class="skill-card card"><div class="skill-icon">📦</div><div class="skill-name">Git &amp; GitHub</div><div class="skill-desc">Version control &amp; kolaborasi</div></div>
+        <div class="skill-card card"><div class="skill-icon">🚀</div><div class="skill-name">Python</div><div class="skill-desc">Scripting dan back-end</div></div>
       </div>
     </section>
 
@@ -57,28 +46,16 @@
       <h2 class="section-title">Proyek</h2>
       <p class="section-subtitle">Beberapa hal yang pernah saya kerjakan</p>
       <div class="projects-grid">
-        <div class="project-card card">
-          <span class="project-tag">Web</span>
-          <h3>Praktikum Git</h3>
-          <p>Belajar Git dari awal: commit, branching, merge conflict, rebase, dan GitHub workflow.</p>
-        </div>
-        <div class="project-card card">
-          <span class="project-tag">UI/UX</span>
-          <h3>Landing Page Portofolio</h3>
-          <p>Halaman web personal yang menampilkan skills, proyek, dan informasi kontak.</p>
-        </div>
-        <div class="project-card card">
-          <span class="project-tag">Python</span>
-          <h3>Kalkulator CLI</h3>
-          <p>Aplikasi kalkulator sederhana berbasis command line dengan Python.</p>
-        </div>
+        <div class="project-card card"><span class="project-tag">Web</span><h3>Praktikum Git</h3><p>Belajar Git dari awal hingga workflow GitHub.</p></div>
+        <div class="project-card card"><span class="project-tag">UI/UX</span><h3>Landing Page Portofolio</h3><p>Halaman web personal dengan skills dan kontak.</p></div>
+        <div class="project-card card"><span class="project-tag">Python</span><h3>Kalkulator CLI</h3><p>Aplikasi kalkulator berbasis command line.</p></div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="contact-wrapper card">
         <h2>Hubungi Saya</h2>
-        <p>Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menghubungi.</p>
+        <p>Punya pertanyaan atau ingin berkolaborasi?</p>
         <div class="contact-links">
           <a href="mailto:email@student.ac.id" class="contact-link">✉️ Email</a>
           <a href="https://github.com/username" class="contact-link">💻 GitHub</a>
