@@ -1,28 +1,31 @@
 /* ===================================================
-   style.css — branch: experiment/color-A
-   Pesan commit: style: change body background to dark blue
+   style.css — branch: feature/dark-mode
+   Pesan commit (setelah rebase squash):
+   feat: add dark mode toggle with CSS class switching
    
-   PERUBAHAN: --bg-dark diubah dari #0d0d0d → #1a1a2e
-   Baris ini yang akan konflik dengan color-B!
+   Ini hasil squash dari 3 commit:
+   - wip: dark mode attempt 1
+   - wip: dark mode refinement
+   - wip: dark mode complete
    =================================================== */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-dark:    #1a1a2e;   /* ← DIUBAH di branch ini */
-  --bg-card:    #16213e;
+  --bg-dark:    #0d0d0d;
+  --bg-card:    #161616;
   --accent:     #00e5a0;
   --accent-dim: #00c48a;
   --text:       #f0f0f0;
-  --muted:      #8888aa;
-  --border:     #2a2a4a;
+  --muted:      #888888;
+  --border:     #2a2a2a;
   --radius:     12px;
   --font-main:  'Segoe UI', system-ui, sans-serif;
   --max-width:  1100px;
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-main); background-color: var(--bg-dark); color: var(--text); line-height: 1.6; }
+body { font-family: var(--font-main); background-color: var(--bg-dark); color: var(--text); line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
 
 h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -1px; }
 h2 { font-size: 2rem; font-weight: 700; }
@@ -40,7 +43,8 @@ p  { color: var(--muted); }
 .btn-outline       { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-.navbar { position: sticky; top: 0; z-index: 100; background: rgba(26,26,46,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.navbar { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+body.light .navbar { background: rgba(245,245,240,0.92); }
 .nav-logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-decoration: none; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
@@ -54,7 +58,7 @@ p  { color: var(--muted); }
 .hero p   { font-size: 1.15rem; max-width: 500px; margin: 0 auto 2.5rem; }
 .hero-cta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
-.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: border-color 0.2s, transform 0.2s, background 0.3s; }
 .card:hover { border-color: var(--accent); transform: translateY(-4px); }
 
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
@@ -82,9 +86,25 @@ p  { color: var(--muted); }
 .footer-contact a { color: var(--accent); text-decoration: none; }
 .footer-bottom { max-width: var(--max-width); margin: 0 auto; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; }
 
+/* ===== DARK MODE TOGGLE BUTTON ===== */
+.dark-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  color: var(--text);
+}
+
+.dark-toggle:hover { border-color: var(--accent); }
+/* ========================================= */
+
 @media (max-width: 600px) {
   .section { padding: 3rem 1.25rem; }
   .nav-links { display: none; }
   .footer-inner { flex-direction: column; }
   .footer-contact { text-align: left; }
+  .dark-toggle { bottom: 1rem; right: 1rem; }
 }
