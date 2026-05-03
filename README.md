@@ -121,3 +121,5 @@ git push origin nama-branch
 ```
 
 ---
+### 3 Issues
+<img width="1288" height="369" alt="image" src="https://github.com/user-attachments/assets/01bc537d-03bd-4dd2-9ba2-8a4db4c91957" />
