@@ -24,6 +24,10 @@
   --max-width:  1100px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===== LIGHT MODE (toggle dengan class .light di <body>) ===== */
 body.light {
   --bg-dark:  #f5f5f0;
