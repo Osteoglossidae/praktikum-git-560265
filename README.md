@@ -32,9 +32,7 @@
 
 ## 📸 Branch Protection Rule
 
-> *(Letakkan screenshot Branch Protection Rule settings di sini)*
-
-![Branch Protection](screenshot-branch-protection.png)
+<img width="887" height="937" alt="image" src="https://github.com/user-attachments/assets/ecf48865-2390-4225-b4b0-83d8d2fcb321" />
 
 ---
 
