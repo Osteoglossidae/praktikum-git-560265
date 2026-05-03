@@ -94,6 +94,7 @@ git commit -m "fix: resolve merge conflict"
 
 Penyelesaian konflik menggunakan VScode:
 <img width="1124" height="762" alt="Screenshot 2026-05-03 070416" src="https://github.com/user-attachments/assets/a0ef201b-855d-4a71-9428-e4740df8368d" />
+Dikarenakan menggunakan vscode, penyelesaian bisa diselesaikan dengan mengklik opsi tombol-tombol yang tersedia seperti "Accept current change"
 
 
 ### Interactive Rebase
